@@ -378,24 +378,22 @@
         var amount = particleRate * deltaTime;
 
         for (var i = 0; i < amount; i++) {
-        var heartScale = window.innerWidth <= 600 ? 0.75 : 1;
-
-particles.add(
-  canvas.width / 2 + pos.x * heartScale,
-  canvas.height / 2 - pos.y * heartScale,
-  dir.x * heartScale,
-  -dir.y * heartScale
-);
+          var pos = pointOnHeart(
+            Math.PI - 2 * Math.PI * Math.random()
+          );
 
           var dir = pos.clone().length(
             settings.particles.velocity
           );
 
+          // Smaller heart on mobile
+          var heartScale = window.innerWidth <= 600 ? 0.75 : 1;
+
           particles.add(
-            canvas.width / 2 + pos.x,
-            canvas.height / 2 - pos.y,
-            dir.x,
-            -dir.y
+            canvas.width / 2 + pos.x * heartScale,
+            canvas.height / 2 - pos.y * heartScale,
+            dir.x * heartScale,
+            -dir.y * heartScale
           );
         }
 
