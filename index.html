@@ -81,6 +81,26 @@
       .copy a {
         color: #6666669c;
       }
+      /* Mobile zoom-out adjustment */
+@media screen and (max-width: 600px) {
+  .namebox {
+    transform: translate(-50%, -50%) scale(0.85);
+    width: 100%;
+  }
+
+  .namebox h1 {
+    font-size: 26px;
+  }
+
+  .message {
+    font-size: 17px;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
     </style>
   </head>
 
